@@ -19,7 +19,7 @@ class PagesController < ApplicationController
 
   def contest
     flash[:notice] = "No contest"
-    redirect_to "/"
+    redirect_to "/"  # dynamic routes need an argument
   end
 
   def secrets
