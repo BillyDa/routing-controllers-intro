@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  before_action :set_kitten_url, only: [:kitten, :kittens]
 
   def welcome
     @header = "you're welcome"
@@ -6,7 +7,13 @@ class PagesController < ApplicationController
   end
 
   def kitten
+  end
+
+  def kittens
+  end
+
+  def set_kitten_url
     requested_size = params[:size]
-    @kitten_url = "http://cdn3-www.dogtime.com/assets/uploads/2011/01/file_23262_entlebucher-mountain-dog-300x189.jpg"
+    @kitten_url = "http://lorempixel.com/#{requested_size}/#{requested_size}/cats"
   end
 end
