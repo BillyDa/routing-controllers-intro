@@ -8,4 +8,6 @@ Rails.application.routes.draw do
 
   get '/contest' => 'pages#contest'
 
+  get '/secrets/:magic_word' => 'pages#secrets'
+
 end

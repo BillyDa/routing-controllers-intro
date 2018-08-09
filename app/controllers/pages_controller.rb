@@ -21,4 +21,13 @@ class PagesController < ApplicationController
     flash[:notice] = "No contest"
     redirect_to "/"
   end
+
+  def secrets
+    if params[:magic_word] == "gesundheit"
+      render "secrets"
+    else
+      flash[:alert] = "Sorry, you are not authorized to know this secret"
+      redirect_to "/"
+    end
+  end
 end
